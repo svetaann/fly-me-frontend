@@ -1,0 +1,6 @@
+<!-- Выводит айди всех билетов -->
+<div class="row">
+    <div class="tickets" *ngFor="let ticket of ticket$ | async">
+        <p class="card-gate">{{ticket.id}}</p>
+    </div>
+</div>
