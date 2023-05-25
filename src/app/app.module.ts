@@ -1,21 +1,16 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TicketModule } from './ticket/ticket.module';
-import { TicketComponent } from './ticket/ticket.component';
-
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgSelectModule } from "@ng-select/ng-select";
+  
+import { AppComponent } from "./app.component";
+import { HttpClientModule } from "@angular/common/http";
+  
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    TicketModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule, NgSelectModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent, TicketComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
