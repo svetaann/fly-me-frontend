@@ -1,10 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
-}
+
 
 /* Navbar */
 .navbar ul {
@@ -81,7 +75,7 @@ flex-wrap: wrap;
 }
 
 .tickets .ticket {
-background-color: #090909;
+background-color: #000;
 border-radius: 10px;
 }
 
@@ -107,8 +101,13 @@ margin-bottom: 10px;
     color: #000;
   }
 
-  .tickets .from input,.tickets  .start input{
+  .tickets .from input{
     border-radius: 21px 0 0 21px;
+    border-right-style: solid;
+    border-right-width: 0.5px;
+  }
+  .tickets  .start input{
+    border-radius: 21px;
     border-right-style: solid;
     border-right-width: 0.5px;
   }
@@ -145,24 +144,38 @@ margin-bottom: 10px;
     font-family: Arial, sans-serif;
 }
 /* Sale */
-.sale {
+/* .sale {
 background-color: #000;
-padding: 100px 0;
+padding: 160px 100px;
 }
 
 .sale h1 {
 color: #0f0;
 font-size: 36px;
+    text-align: center;
+    padding-bottom: 60px;
 }
 
 .psale {
-margin-bottom: 20px;
+margin: 20px;
+padding: 20px;
+background-color: #fff;
+border: #0f0 solid 1px;
 }
 
 .psale h4 {
 color: #0f0;
 font-size: 24px;
 }
+
+  .sale div{
+    padding: 30px;
+    border-style: solid;
+    border-color: white;
+    background-color: #000;
+    border-radius: 20px;
+  } */
+
 
 /* Info */
 .info {
@@ -210,11 +223,11 @@ hr{
     height: 1px;;
   }
   .extrainfo{
-    background-color: white;
+    
     text-align: right;
   }
   .extrainfo p{
-    padding: 15px 20px;
+    padding: 10px 20px;
     font-size: 11px;
   }
 
@@ -241,8 +254,9 @@ hr{
     width: 300px;
     padding: 20px;
     margin: 20px;
-    background-color: #090909;
+    background-color: #000;
     border-radius: 10px;
+    border: #fff solid 1px;
   }
   
   .showTickets .ticket h2 {
@@ -255,3 +269,4 @@ hr{
     font-size: 18px;
     margin-bottom: 10px;
   }
+  
