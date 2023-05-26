@@ -1,5 +1,102 @@
-<div class="main" ng-app="mytodo" ng-controller="myCtrl">
-  <h1>Todo List App</h1>
+<div class="navbar">
+  <ul>
+    <li><a href="#main">FlyMe</a></li>
+    <li><a href="#tickets">Билеты</a></li>
+    <li><a href="#sale">Акции</a></li>
+    <li><a href="#info">О компании</a></li>
+    <li><a href="#contact">Контакты</a></li>
+  </ul>
+</div>
+<div class="maininfo" id="main">
+  <div class="text">
+    <h1>FlyMe</h1>
+    <p>c нами хоть на луну</p>
+  </div>
+</div>
+<div class="tickets" id="tickets">
+  <h1>Удобный сервис поиска билетов</h1>
+  <div class="ticket-block">
+    <div class="ticket from">
+      <input type="text" placeholder="Откуда" [(ngModel)]="from">
+    </div>
+    <div class="ticket to">
+      <input type="text" placeholder="Куда" [(ngModel)]="to">
+    </div>
+    <div class="ticket start">
+      <input type="text" placeholder="Туда" [(ngModel)]="start">
+    </div>
+    <div class="ticket end">
+      <input type="text" placeholder="Обратно" [(ngModel)]="end">
+    </div>
+    <div class="ticket find">
+      <span style="color: aliceblue;" (click)="findTickets(from,to,start)">
+          <i  class="fas fa-plus">Найти</i>
+      </span>
+    </div>
+  </div>
+  <ul>
+    <li style="color: aqua;" *ngFor= "let ticket of foundTickets">
+      {{ticket.from_airport}}-{{ticket.to_airport}}
+      класс:
+      {{ticket.class+" "}} место:
+      {{ticket.seat+" "}}
+      <!-- {{ticket.date+" "}} --> цена:
+      {{ticket.price}}
+      <!-- <i class="fas fa-trash-alt" (click)="deleteTicket(ticket.id)"></i> -->
+    </li>
+  </ul>
+</div>
+
+
+    <!-- <div class="ticket">
+      <h2>Москва - Санкт-Петербург</h2>
+      <p>Цена: $100</p>
+      <p>Место: 7A</p>
+    </div>
+    <div class="ticket">
+      <h2>Москва - Нью-Йорк</h2>
+      <p>Цена: $500</p>
+      <p>Место: 12C</p>
+    </div>
+    <div class="ticket">
+      <h2>Москва - Париж</h2>
+      <p>Цена: $300</p>
+      <p>Место: 5B</p>
+    </div> -->
+ 
+<div class="sale" id="sale">
+  <h1>Акции</h1>
+  <div class="psale">
+    <h4>Скидка для студентов</h4>
+    <p>Для студентов очной формы обучения представляется скидка в размере 20% при предъявлении студенческого билета</p>
+  </div>
+  <div class="psale">
+    <h4>Скидка для пенсионеров</h4>
+    <p>Предложение действует:</p>
+    <p>Для женщин старше 55 лет</p>
+    <p>Для мужчин старше 60 лет</p>
+    <p>Для детей до 12 лет, следующих совместно со взрослым пассажиром "пенсионер" - скидка 15%</p>
+  </div>
+</div>
+<div class="info" id="info">
+  <h2>О нас</h2>
+  <div class="bordereddiv">
+    <p>Компания FlyMe осуществляет авиаперевозки с 1 декабря 2014 года.</p>
+    <p>Первый в России лоукостер стал самым успешным проектом в истории российской авиации.</p>
+    <p>В 2018 году FlyMe стала мировым лидером по росту пассажиропотока.</p>
+    <p>В 2020 году FlyMe стала самой пунктуальной авиакомпанией России.</p>
+ </div>
+</div>
+<div class="contact" id="contact">
+ <h2>Контакты</h2>
+ <div class="rooms">
+   <p>Телефон: +7 (123) 456-7890</p>
+   <p>Email: info@flyme.com</p>
+   <p>Адрес: Москва, ул. Летательная, 1</p>
+ </div>
+</div>
+<!--- Добавление билета -->
+<!-- <div class="main" ng-app="mytodo" ng-controller="myCtrl">
   <div class="search">
     <input type="text" [(ngModel)]="class" />
     <input type="text" [(ngModel)]="terminal" />
@@ -10,8 +107,9 @@
     <input type="text" [(ngModel)]="plane_id" />
     <input type="text" [(ngModel)]="flight_id" />
     <span (click)="addTicket(class, terminal, seat, gate, date, price, plane_id, flight_id)"><i class="fas fa-plus"></i></span>
-  </div>
-  <ul>
+  </div> -->
+  <!-- Все билеты -->
+  <!-- <ul>
     <li *ngFor= "let ticket of tickets">
       {{ ticket.id}}
       {{ticket.class+" "}}
@@ -20,32 +118,12 @@
       {{ticket.gate+" "}}
       {{ticket.date+" "}}
       {{ticket.price}}
-      <!-- <i class="fas fa-trash-alt" (click)="deleteTicket(ticket.id)"></i> -->
+      <i class="fas fa-trash-alt" (click)="deleteTicket(ticket.id)"></i>
     </li>
   </ul>
   <p></p>
-</div>
-<div>
-  <div class="tickblock">
-    <ul>
-       <li class="from"><input type="text" placeholder="Откуда" [(ngModel)]="from"></li>
-      <li class="to"><input type="text" placeholder="Куда" [(ngModel)]="to"></li>
-      <li class="go"><input type="text" placeholder="Туда" [(ngModel)]="start"></li>
-      <li class="back"><input type="text" placeholder="Обратно" [(ngModel)]="end"></li>
-      <li class="find"><span (click)="findTickets(from,to,start)"><i class="fas fa-plus"></i></span></li>
-    </ul>
-  </div>
-  <ul>
-    <li *ngFor= "let ticket of foundTickets">
-      класс:
-      {{ticket.class+" "}} место:
-      {{ticket.seat+" "}}
-      <!-- {{ticket.date+" "}} --> цена:
-      {{ticket.price}}
-      <!-- <i class="fas fa-trash-alt" (click)="deleteTicket(ticket.id)"></i> -->
-    </li>
-  </ul>
-</div>
+</div> -->
+
 
 <!-- <div class="navbar">
   <ul>
@@ -115,7 +193,8 @@
   <br>
   <h4>Круглосуточная служба поддержки - +7(902)02-03-222</h4>
 </div>
+ -->
 <div class="extrainfo">
   <hr>
   <p>© 2023, ООО «Авиакомпания «FlyMe»</p>
-</div> -->
+</div>

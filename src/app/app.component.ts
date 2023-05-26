@@ -10,6 +10,8 @@ interface Ticket{
   price: number;
   plane_id: number;
   flight_id: number
+  from_airport: string;
+  to_airport: string
 }
 @Component({
   selector: 'app-root',
@@ -32,6 +34,8 @@ export class AppComponent {
   to: string;
   start: string;
   end: string;
+  from_airport: string;
+  to_airport: string
   constructor(private ticketService: TicketService){
     this.tickets = [];
     this.foundTickets = [];
@@ -47,6 +51,8 @@ export class AppComponent {
     this.to ="";
     this.start="";
     this.end=""
+    this.from_airport=""
+    this.to_airport=""
   }
   title = "flyme"
   ngOnInit(){
