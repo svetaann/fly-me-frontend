@@ -18,7 +18,9 @@ interface FullTicket{
   from_airport: string;
   to_airport: string;
   from_iata: string;
-  to_iata: string
+  to_iata: string;
+  from_city: string;
+  to_city: string;
 }
 interface Passenger{
   fullname: string;
@@ -51,7 +53,12 @@ export class TicketComponent {
   birthDate: string;
   passport: string;
   email:string;
-  ticketId: number
+  ticketId: number;
+  fromCities: string[];
+  toCities: string[];
+  //
+  fromFocused: boolean = false
+  searchText=""
   constructor(private ticketService: TicketService){
     
     this.tickets = [];
@@ -69,17 +76,33 @@ export class TicketComponent {
     this.ticketId=0
     this.food=false
     this.luggage=false
+    this.fromCities = [];
+    this.toCities = [];
   }
 
   ngOnInit(){
     this.ticketService.getTickets().subscribe((data) => {
       console.log(data);
       this.tickets = data as FullTicket[];
+      for(const ticket of this.tickets){
+        const fromCity = ticket.from_city
+        const toCity = ticket.to_city
+        if (!(this.fromCities.includes(fromCity))){
+            this.fromCities.push(fromCity)
+        }
+        if (!(this.toCities.includes(toCity))){
+          this.toCities.push(toCity)
+        }
+      }
+      console.log(this.toCities, this.fromCities)
     })
   }
-
+  fromItemClick(){
+    let myContainer = document.getElementById('from') as HTMLInputElement;
+    myContainer.value = "pressed";
+  }
   findTickets(from: string, to: string, date: string){
-    console.log(date)
+    console.log(from,to,date)
     this.ticketService.findTickets(from, to, date).subscribe((data) => {
       console.log(data)
       this.foundTickets = data as FullTicket[];

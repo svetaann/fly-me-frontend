@@ -2,10 +2,18 @@
     <h1>Удобный сервис поиска билетов</h1>
     <div class="ticket-block">
       <div class="ticket from">
-        <input type="text" placeholder="Откуда" [(ngModel)]="from">
+        <!-- <input type="text" placeholder="Откуда" > -->
+        <select id="selectID" [(ngModel)]="from" >
+          <option value="" hidden disabled selected>Откуда</option>
+          <option *ngFor= "let fromCity of fromCities" value={{fromCity}} >{{fromCity}}</option>
+        </select>
       </div>
       <div class="ticket to">
-        <input type="text" placeholder="Куда" [(ngModel)]="to">
+        <!-- <input type="text" placeholder="Куда" [(ngModel)]="to"> -->
+        <select id="selectID" [(ngModel)]="to" >
+          <option value="" hidden disabled selected>Куда</option>
+          <option *ngFor= "let toCity of toCities" value={{toCity}} >{{toCity}}</option>
+        </select>
       </div>
       <div class="ticket start">
         <input type="text" placeholder="Дата" [(ngModel)]="date" type="date">

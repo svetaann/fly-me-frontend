@@ -17,7 +17,7 @@ export class TicketService {
   host = 'http://localhost:3001';
   constructor(private http: HttpClient) {}
   getTickets() {
-    return this.http.get(`${this.host}/ticket`).pipe(map((res) => res));
+    return this.http.get(`${this.host}/ticket/fullForSale`).pipe(map((res) => res));
   }
   
   findTickets(from: string, to: string, date: string){

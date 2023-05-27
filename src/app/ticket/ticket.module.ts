@@ -6,9 +6,10 @@ import { NgSelectModule } from "@ng-select/ng-select";
 
 import { HttpClientModule } from "@angular/common/http";
 import { TicketComponent } from "./ticket.component";
+import { FilterPipe } from "./filter.pipe";
   
 @NgModule({
-  declarations: [TicketComponent],
+  declarations: [TicketComponent, FilterPipe],
   imports: [BrowserModule, FormsModule, NgSelectModule, HttpClientModule],
   exports: [TicketComponent],
   providers: [],
