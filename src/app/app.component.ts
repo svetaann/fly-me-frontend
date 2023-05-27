@@ -106,10 +106,13 @@ export class AppComponent {
   }
   chosenTicket(ticket_id: number){
     console.log(ticket_id)
-    this.chosenTicketId = ticket_id;
-    this.openModalWindow = true;
+    
     if(ticket_id==0){
       this.openModalWindow = false;
+    }
+    else{
+      this.chosenTicketId = ticket_id;
+    this.openModalWindow = true;
     }
   }
 
