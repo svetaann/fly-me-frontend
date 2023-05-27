@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { TicketService } from './ticket.service';
 interface Ticket{
   id: number;
@@ -14,6 +14,16 @@ interface Ticket{
   to_airport: string;
   to_iata: string;
   from_iata: string;
+  name: string;
+  surname: string;
+  pathronymic: string;
+  birthDate: string;
+  passport: string;
+}
+interface Passenger{
+  fullname: string;
+  birth_date: string;
+  passport: string;
 }
 @Component({
   selector: 'app-root',
@@ -22,6 +32,8 @@ interface Ticket{
 })
 export class AppComponent {
   
+  chosenTicketId: number = 0; 
+  openModalWindow: boolean = false;
   tickets: Ticket[];
   foundTickets: Ticket[];
   class: string;
@@ -40,6 +52,12 @@ export class AppComponent {
   to_airport: string
   to_iata: string;
   from_iata: string;
+  name: string;
+  surname: string;
+  pathronymic: string;
+  birthDate: string;
+  passport: string;
+  id: number;
 
   constructor(private ticketService: TicketService){
     this.tickets = [];
@@ -59,7 +77,13 @@ export class AppComponent {
     this.from_airport=""
     this.to_airport=""
     this.from_iata=""
-    this.to_iata=""
+    this.to_iata="";
+    this.name="";
+    this.surname="";
+    this.pathronymic="";
+    this.birthDate="";
+    this.passport="";
+    this.id=0;
   }
   title = "flyme"
   ngOnInit(){
@@ -79,6 +103,24 @@ export class AppComponent {
     this.price = 0;
     this.plane_id = 1;
     this.flight_id = 1;
+  }
+  chosenTicket(ticket_id: number){
+    console.log(ticket_id)
+    this.chosenTicketId = ticket_id;
+    this.openModalWindow = true;
+    if(ticket_id==0){
+      this.openModalWindow = false;
+    }
+  }
+
+  buyTicket(surname: string, name: string, pathronymic: string, birthDate: string, passport: string, ticketId: number){
+    
+    const user = surname + ' ' + name + ' ' + pathronymic
+    let passenger: Passenger = {fullname: user,
+      birth_date: birthDate, passport: passport}
+      console.log(user, passenger, ticketId)
+    this.ticketService.buyTicket(ticketId, passenger).subscribe((data) => {console.log(data)
+    this.foundTickets = data as Ticket[];})
   }
 
   deleteTicket(id: number){

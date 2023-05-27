@@ -41,8 +41,12 @@
       <h2>{{ticket.from_iata}}-{{ticket.to_iata}}</h2>
       <p>Цена: {{ticket.price}}</p>
       <p>Место: {{ticket.seat}}</p>
-    </div>
-    
+      <span style="color: aliceblue;" (click)="chosenTicket(ticket.id)">
+        Купить
+        <!-- <a href="#openModal">Купить</a> -->
+        <!-- <i  class="fas fa-plus">Купить</i> -->
+    </span>
+    </div>   
   </div>
 </div>
 <!-- </div>
@@ -226,3 +230,37 @@
   <hr>
   <p>© 2023, ООО «Авиакомпания «FlyMe»</p>
 </div>
+<div *ngIf="openModalWindow" id="openModal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Заголовок</h3>
+        <a (click)="chosenTicket(0)" href="#close" title="Close" class="close"  >×</a>
+        
+      </div>
+      <div class="modal-body">    
+        
+          <div class="search">
+            Фамилия:
+            <input type="text" [(ngModel)]="surname" />
+            Имя:
+            <input type="text" [(ngModel)]="name" />
+            Отчество:
+            <input type="text" [(ngModel)]="pathronymic" />
+            Дата рождения:
+            <input type="text" [(ngModel)]="birthDate" />
+            Номер и серия паспорта:
+            <input type="text" [(ngModel)]="passport" />
+            <span (click)="buyTicket(surname, name, pathronymic, birthDate, passport, chosenTicketId)"><i class="fas fa-plus"></i></span>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- HTML кнопки -->
+ 
+<a href="#openModal">Открыть модальное окно</a>
+ 
+ 
+<!-- CSS-стили модального окна -->
