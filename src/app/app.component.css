@@ -1,237 +1,120 @@
-
-
 /* Navbar */
 .navbar ul {
-    padding-left: 0;
-    overflow: hidden;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  padding-left: 0;
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
-.navbar{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    border-style: solid;
-    border-color: #747373;
-    border-width: 1px;
-    background-color: #000;
-    margin: 0;
-    border-left: none;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-style: solid;
+  border-color: #747373;
+  border-width: 1px;
+  background-color: #000;
+  margin: 0;
+  border-left: none;
 }
-  
+
 .navbar li {
-    float: left;
+  float: left;
 }
-  
-  .navbar li a {
-    display: block;
-    text-align: center;
-    padding: 20px 114px;
-    text-decoration: none;
-    text-decoration: none;
-    color: #0f0;
-    font-size: 20px;
+
+.navbar li a {
+  display: block;
+  text-align: center;
+  padding: 20px 114px;
+  text-decoration: none;
+  text-decoration: none;
+  color: #0f0;
+  font-size: 20px;
 }
-  
-  .navbar li a:hover {
-    background-color: #111;
-  }
+
+.navbar li a:hover {
+  background-color: #111;
+}
 
 
 
 /* Main Info */
 .maininfo {
-background-color: #000;
-padding: 100px 0;
-text-align: center;
+  background-color: #000;
+  padding: 100px 0;
+  text-align: center;
 }
 
 .maininfo h1 {
-color: #0f0;
-font-size: 48px;
+  color: #0f0;
+  font-size: 48px;
 }
 
 .maininfo p {
-font-size: 24px;
+  font-size: 24px;
 }
-
-/* Tickets */
-/* .tickets {
-background-color: #000;
-text-align: center;
-}
-
-.tickets h1 {
-color: #0f0;
-font-size: 36px;
-padding-bottom: 90px;
-padding-top: 80px;
-}
-
-.tickets .ticket-block {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-}
-
-.tickets .ticket {
-background-color: #000;
-border-radius: 10px;
-}
-
-.tickets .ticket h2 {
-color: #0f0;
-font-size: 24px;
-margin-bottom: 10px;
-}
-
-.tickets .ticket p {
-font-size: 18px;
-margin-bottom: 10px;
-}
-.tickets input{
-    border: none;
-    display: block;
-    height: 65px;
-    width: 165px;
-    margin: 68px 0;
-    text-align: center;
-    font-size: 15px;
-    background-color: #D9D9D9;
-    color: #000;
-  }
-
-  .tickets .from input{
-    border-radius: 21px 0 0 21px;
-    border-right-style: solid;
-    border-right-width: 0.5px;
-  }
-  .tickets  .start input{
-    border-radius: 21px;
-    border-right-style: solid;
-    border-right-width: 0.5px;
-  }
-  .tickets .to input, .tickets .end input{
-    border-radius: 0 21px 21px 0;
-  }
-  .tickets .find span{
-    background-color: #000;
-    border-radius: 21px;
-    
-  }
-
-  .tickets .to, .tickets .back{
-    padding-right: 20px;
-  }
-
-  .tickets span, .modal span{
-    cursor: pointer;
-    border: 2px solid #0f0;
-    display: block;
-    height: 65px;
-    width: 165px;
-    margin: 68px 0;
-    margin-left: 20px;
-    text-align: center;
-    font-size: 15px;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    
-} 
-.tickets i{
-    padding-top: 20px;
-    color: #0f0;
-    font-family: Arial, sans-serif;
-} */
-/* Sale */
-/* .sale {
-background-color: #000;
-padding: 160px 100px;
-}
-
-.sale h1 {
-color: #0f0;
-font-size: 36px;
-    text-align: center;
-    padding-bottom: 60px;
-}
-
-.psale {
-margin: 20px;
-padding: 20px;
-background-color: #fff;
-border: #0f0 solid 1px;
-}
-
-.psale h4 {
-color: #0f0;
-font-size: 24px;
-}
-
-  .sale div{
-    padding: 30px;
-    border-style: solid;
-    border-color: white;
-    background-color: #000;
-    border-radius: 20px;
-  } */
-
 
 /* Info */
 .info {
-background-color: #000;
-padding: 100px 0;
+  background-color: #000;
+  padding: 100px 0;
+  margin-bottom: 0;
+  margin-top: 50px;
 }
 
 .info h2 {
-color: #0f0;
-font-size: 36px;
-text-align: center;
-margin-bottom: 40px;
+  color: #0f0;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .bordereddiv {
-border: 2px solid #0f0;
-padding: 20px;
-margin: 0 auto;
-max-width: 600px;
-border-radius: 21px;
+  border: 2px solid #0f0;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 600px;
+  border-radius: 21px;
+}
+
+img{
+  width: 100%;
 }
 
 /* Contact */
 .contact {
-background-color: #000;
-padding: 100px 0;
+  background-color: #000;
+  padding: 100px 0;
 }
 
-.contact h2 {
-color: #0f0;
-font-size: 36px;
-text-align: center;
-margin-bottom: 40px;
+.contact h2, .sale h2 {
+  color: #0f0;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .rooms p {
-margin-bottom: 10px;
+  margin-bottom: 10px;
 }
-p{
-    color: white;
+
+p {
+  color: white;
 }
-hr{
-    background-color: #0f0;
-    border: none;
-    height: 1px;;
+
+hr {
+  background-color: #0f0;
+  border: none;
+  height: 1px;
+  ;
 }
-.extrainfo{
+
+.extrainfo {
   text-align: right;
 }
-.extrainfo p{
+
+.extrainfo p {
   padding: 10px 20px;
   font-size: 11px;
 }
-  
-
-
-  

@@ -1,50 +1,40 @@
-:root {
-  --scrollbarWidth: 0;
-}
-::-webkit-scrollbar {
-  width: var(--scrollbarWidth);
-}
-::-webkit-scrollbar-track {
-  background: var(--scrollbarBg);
-  border-radius: var(--scrollbarBorderRadius);
-}
-::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbarThumb);
-  border-radius: var(--scrollbarBorderRadius);
-}
+
 .tickets {
   background-color: #000;
   text-align: center;
-}  
+}
+
 .tickets h1 {
   color: #0f0;
   font-size: 36px;
   padding-bottom: 90px;
   padding-top: 80px;
 }
+
 .tickets .ticket-block {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  }
-  
-  .tickets .ticket {
+}
+
+.tickets .ticket {
   background-color: #000;
   border-radius: 10px;
-  }
-  
-  .tickets .ticket h2 {
+}
+
+.tickets .ticket h2 {
   color: #0f0;
   font-size: 24px;
   margin-bottom: 10px;
-  }
-  
-  .tickets .ticket p {
+}
+
+.tickets .ticket p {
   font-size: 18px;
   margin-bottom: 10px;
-  }
+}
 
-.tickets .text input, .tickets select{
+.tickets .text input,
+.tickets select {
   border: none;
   display: block;
   height: 65px;
@@ -58,31 +48,42 @@
   -webkit-appearance: none;
   appearance: none;
 }
+
 .tickets .start {
   padding-right: 5px;
 }
-.tickets .from input, .tickets .from select{
+
+.tickets .from input,
+.tickets .from select {
   border-radius: 21px 0 0 21px;
   border-right-style: solid;
   border-right-width: 0.5px;
 }
-.tickets  .start input{
+
+.tickets .start input {
   border-radius: 21px;
   border-right-style: solid;
   border-right-width: 0.5px;
 }
-.tickets .to input, .tickets .end input, .tickets .to select{
+
+.tickets .to input,
+.tickets .end input,
+.tickets .to select {
   border-radius: 0 21px 21px 0;
-}      
-.tickets .find span{
+}
+
+.tickets .find span {
   background-color: #000;
   border-radius: 21px;
-}      
-.tickets .to, .tickets .back{
+}
+
+.tickets .to,
+.tickets .back {
   padding-right: 20px;
 }
 
-.tickets span, .modal span{
+.tickets span,
+.modal span {
   cursor: pointer;
   border: 2px solid #0f0;
   display: block;
@@ -94,12 +95,14 @@
   font-size: 15px;
   background-color: #000;
   display: flex;
-  justify-content: center;   
-} 
-.tickets i{
+  justify-content: center;
+}
+
+.tickets i {
   padding-top: 20px;
   color: #0f0;
 }
+
 .showTickets {
   background-color: #000;
   padding: 100px 0;
@@ -127,52 +130,61 @@
   border-radius: 10px;
   border: #fff solid 1px;
 }
+
 .showTickets .ticket h2 {
   color: #0f0;
   font-size: 24px;
   margin-bottom: 10px;
 }
+
 .showTickets .ticket p {
   font-size: 18px;
   margin-bottom: 10px;
 }
-.showTickets span{
+
+.showTickets span {
   margin-left: 48.3px;
   margin-bottom: 38px;
-  text-align:center;
+  text-align: center;
 }
 
-.modal, .modal2 {
+.modal,
+.modal2 {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0,0.5); 
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1050;
-  -webkit-transition: opacity 200ms ease-in; 
+  -webkit-transition: opacity 200ms ease-in;
   -moz-transition: opacity 200ms ease-in;
   transition: opacity 200ms ease-in;
   margin: 0;
   padding: 0;
 }
-.modal:target, .modal2:target {
-  opacity: 1; 
+
+.modal:target,
+.modal2:target {
+  opacity: 1;
   pointer-events: all;
-  overflow-y: auto; 
+  overflow-y: auto;
 }
+
 .modal-dialog {
   position: relative;
   width: auto;
   margin: 10px;
 }
+
 @media (min-width: 576px) {
-.modal-dialog {
+  .modal-dialog {
     max-width: 500px;
-    margin: 30px auto; 
-}
+    margin: 30px auto;
+  }
 
 }
+
 .modal-content {
   height: 650px;
   position: relative;
@@ -188,22 +200,25 @@
   background-color: #fff;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.2);
+  border: 1px solid rgba(0, 0, 0, .2);
   border-radius: .3rem;
   outline: 0;
 }
-.modal2 .modal-content{
+
+.modal2 .modal-content {
   height: 270px;
 }
+
 @media (min-width: 768px) {
-.modal-content {
-  border: #0f0 solid 2px;
-  border-radius: 21px;
-  background-color: #000;
-    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
-    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  .modal-content {
+    border: #0f0 solid 2px;
+    border-radius: 21px;
+    background-color: #000;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  }
 }
-}
+
 .modal-header {
   display: -webkit-box;
   display: -webkit-flex;
@@ -220,6 +235,7 @@
   padding: 20px;
   border-bottom: 1px solid #eceeef;
 }
+
 .modal-title {
   margin-top: 0;
   margin-bottom: 0;
@@ -227,6 +243,7 @@
   font-size: 1.25rem;
   font-weight: 500;
 }
+
 .close {
   float: right;
   font-size: 24px;
@@ -237,29 +254,50 @@
   opacity: .5;
   text-decoration: none;
 }
-.close:focus, .close:hover {
+
+.close:focus,
+.close:hover {
   color: #000;
   text-decoration: none;
   cursor: pointer;
   opacity: .75;
 }
+
 .modal-body {
-position: relative;
+  position: relative;
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 auto;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 15px;
-  overflow-x:auto;
+  overflow-x: auto;
 }
 
-.modal .text input{
+.modal .text input {
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
-.modal2 input{
+:root {
+  --scrollbarWidth: 0;
+}
+
+::-webkit-scrollbar {
+  width: var(--scrollbarWidth);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbarBg);
+  border-radius: var(--scrollbarBorderRadius);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbarThumb);
+  border-radius: var(--scrollbarBorderRadius);
+}
+
+.modal2 input {
   margin-left: 150px;
   width: 180px;
   margin-bottom: 10px;
@@ -268,23 +306,29 @@ position: relative;
   background-color: #000;
   color: #eceeef;
 }
-.modal2 input{
+
+.modal2 input {
   margin-left: 0;
   height: 50px;
   width: 300px;
 }
-.modal span, .modal2 span{
+
+.modal span,
+.modal2 span {
   margin-left: 147px;
   border-radius: 21px;
 }
-.modal p, .modal2 p{
+
+.modal p,
+.modal2 p {
   color: #000;
   font-size: medium;
   width: 100%;
   height: auto;
   visibility: visible;
 }
-.checkbox input{
+
+.checkbox input {
   display: block;
   margin-left: 145px;
   margin-top: 5px;

@@ -12,102 +12,32 @@
   <div class="text">
     <h1>FlyMe</h1>
     <p>c нами хоть на луну</p>
-    <img src="https://adonius.club/uploads/posts/2022-02/1644360569_28-adonius-club-p-samolet-na-fone-luni-40.jpg" alt="">
+    <img src="https://adonius.club/uploads/posts/2022-02/1644360569_28-adonius-club-p-samolet-na-fone-luni-40.jpg"
+      alt="">
   </div>
 </div>
-<!-- <div class="tickets" id="tickets">
-  <h1>Удобный сервис поиска билетов</h1>
-  <div class="ticket-block">
-    <div class="ticket from">
-      <input type="text" placeholder="Откуда" [(ngModel)]="from">
-    </div>
-    <div class="ticket to">
-      <input type="text" placeholder="Куда" [(ngModel)]="to">
-    </div>
-    <div class="ticket start">
-      <input type="text" placeholder="Дата" [(ngModel)]="start">
-    </div>
-    <div class="ticket find">
-      <span style="color: aliceblue;" (click)="findTickets(from,to,start)">
-          <i  class="fas fa-plus">Найти</i>
-      </span>
-    </div>
-</div> -->
+
 <app-ticketSearch></app-ticketSearch>
-<!-- <div class="showTickets" >
+
+<div class="sale" id="sale">
+  <br><br><br><br>
+  <h2 style="height: 100px;">Акции</h2>
   <div class="ticket-block">
-    <div class="ticket" *ngFor= "let ticket of foundTickets">
-      <h2>{{ticket.from_iata}}-{{ticket.to_iata}}</h2>
-      <p>Цена: {{ticket.price}}</p>
-      <p>Место: {{ticket.seat}}</p>
-      <span style="color: aliceblue;" (click)="chosenTicket(ticket.id)">
-        Купить
-    </span>
-    </div>   
-  </div>
-</div> -->
-
-<!-- </div>
-  <ul>
-    <li style="color: aqua;" *ngFor= "let ticket of foundTickets">
-      {{ticket.from_airport}}-{{ticket.to_airport}}
-      класс:
-      {{ticket.class+" "}} место:
-      {{ticket.seat+" "}}
-      цена:
-      {{ticket.price}}
-      <i class="fas fa-trash-alt" (click)="deleteTicket(ticket.id)"></i>
-    </li>
-  </ul>
-</div> -->
-
-
-    <!-- <div class="ticket">
-      <h2>Москва - Санкт-Петербург</h2>
-      <p>Цена: $100</p>
-      <p>Место: 7A</p>
+    <div class="bordereddiv">
+      <h3 style="color: aliceblue; font-size:large;">Скидка для студентов</h3>
+      <p>Для студентов очной формы обучения представляется скидка в размере 20% при предъявлении студенческого билета
+      </p>
     </div>
-    <div class="ticket">
-      <h2>Москва - Нью-Йорк</h2>
-      <p>Цена: $500</p>
-      <p>Место: 12C</p>
+    <div class="bordereddiv">
+      <h3 style="color: aliceblue; font-size:large;">Скидка для пенсионеров</h3>
+      <p>Предложение действует:</p>
+      <p>Для женщин старше 55 лет</p>
+      <p>Для мужчин старше 60 лет</p>
+      <p>Для детей до 12 лет, следующих совместно со взрослым пассажиром "пенсионер" - скидка 15%</p>
     </div>
-    <div class="ticket">
-      <h2>Москва - Париж</h2>
-      <p>Цена: $300</p>
-      <p>Место: 5B</p>
-    </div> -->
-    <div class="sale" id="sale">
-      <h1>Акции</h1>
-      <div class="ticket-block">
-        <div class="ticket">
-          <h4>Скидка для студентов</h4>
-    <p>Для студентов очной формы обучения представляется скидка в размере 20% при предъявлении студенческого билета</p>
-        </div>
-        <div class="ticket">
-          <h4>Скидка для пенсионеров</h4>
-    <p>Предложение действует:</p>
-    <p>Для женщин старше 55 лет</p>
-    <p>Для мужчин старше 60 лет</p>
-    <p>Для детей до 12 лет, следующих совместно со взрослым пассажиром "пенсионер" - скидка 15%</p>
-        </div>
-        
-      </div>
-    </div>
-<!-- <div class="sale" id="sale">
-  <h1>Акции</h1>
-  <div class="psale">
-    <h4>Скидка для студентов</h4>
-    <p>Для студентов очной формы обучения представляется скидка в размере 20% при предъявлении студенческого билета</p>
   </div>
-  <div class="psale">
-    <h4>Скидка для пенсионеров</h4>
-    <p>Предложение действует:</p>
-    <p>Для женщин старше 55 лет</p>
-    <p>Для мужчин старше 60 лет</p>
-    <p>Для детей до 12 лет, следующих совместно со взрослым пассажиром "пенсионер" - скидка 15%</p>
-  </div>
-</div> -->
+</div>
+
 <div class="info" id="info">
   <h2>О нас</h2>
   <div class="bordereddiv">
@@ -115,117 +45,22 @@
     <p>Первый в России лоукостер стал самым успешным проектом в истории российской авиации.</p>
     <p>В 2018 году FlyMe стала мировым лидером по росту пассажиропотока.</p>
     <p>В 2020 году FlyMe стала самой пунктуальной авиакомпанией России.</p>
- </div>
+  </div>
+
 </div>
 <div class="contact" id="contact">
- <h2>Контакты</h2>
- <div class="rooms">
-   <p>Телефон: +7 (123) 456-7890</p>
-   <p>Email: info@flyme.com</p>
-   <p>Адрес: Москва, ул. Летательная, 1</p>
- </div>
-</div>
-<!--- Добавление билета -->
-<!-- <div class="main" ng-app="mytodo" ng-controller="myCtrl">
-  <div class="search">
-    <input type="text" [(ngModel)]="class" />
-    <input type="text" [(ngModel)]="terminal" />
-    <input type="text" [(ngModel)]="seat" />
-    <input type="text" [(ngModel)]="gate" />
-    <input type="text" [(ngModel)]="date" />
-    <input type="text" [(ngModel)]="price" />
-    <input type="text" [(ngModel)]="plane_id" />
-    <input type="text" [(ngModel)]="flight_id" />
-    <span (click)="addTicket(class, terminal, seat, gate, date, price, plane_id, flight_id)"><i class="fas fa-plus"></i></span>
-  </div> -->
-  <!-- Все билеты -->
-  <!-- <ul>
-    <li *ngFor= "let ticket of tickets">
-      {{ ticket.id}}
-      {{ticket.class+" "}}
-      {{ticket.terminal+" "}}
-      {{ticket.seat+" "}}
-      {{ticket.gate+" "}}
-      {{ticket.date+" "}}
-      {{ticket.price}}
-      <i class="fas fa-trash-alt" (click)="deleteTicket(ticket.id)"></i>
-    </li>
-  </ul>
-  <p></p>
-</div> -->
-
-
-<!-- <div class="navbar">
-  <ul>
-    <li><a href="#main">FlyMe</a></li>
-    <li><a href="#tickets">Билеты</a></li>
-    <li><a href="#sale">Акции</a></li>
-    <li><a href="#info">О компании</a></li>
-    <li><a href="#contact">Контакты</a></li>
-  </ul>
-</div>
-<div class="maininfo" id="main">
-  <div class="text">
-    <h1>FlyMe</h1>
-    <p>c нами хоть на луну</p>
-  </div>
-</div>
-<div class="tickets" id="tickets">
-  <h1 style="text-align: center; color: #D9D9D9; padding-bottom: 90px; padding-top: 80px;">Удобный сервис поиска билетов</h1>
-  <form action="">
-  <div class="tickblock">
-    <ul>
-      <li class="from"><input type="text" placeholder="Откуда" [(ngModel)]="from"></li>
-      <li class="to"><input type="text" placeholder="Куда" [(ngModel)]="to"></li>
-      <li class="go"><input type="text" placeholder="Туда" [(ngModel)]="start"></li>
-      <li class="back"><input type="text" placeholder="Обратно" [(ngModel)]="end"></li>
-      <li class="amount"><input type="text" placeholder="1 пас." [(ngModel)]="passengers"></li>
-      <li class="find"><span (click)="findTickets()"><i class="fas fa-plus"></i></span></li>
-    </ul>
-  </div>
-</form>
-</div>
-<div class="sale" id="sale">
-  <h1>Акции</h1>
-  <div class="psale">
-    <h4>
-      Скидка для студентов</h4>
-    <br> Для студентов очной формы обучения представляется скидка в размере 20% при предъявлении студенческого билета
-  </div>
-  <div class="psale">
-    <h4>
-      Скидка для пенсионеров</h4>
-    <br> Предложение действует:<br>
-    Для женщин старше 55 лет<br>
-    Для мужчин старше 60 лет<br>
-    Для детей до 12 лет, следующих совместно со взрослым пассажиром «пенсионер» - скидка 15%
-  </div>
-</div>
-<div class="info" id="info">
-  <h2>О нас</h2>
-  <div class="bordereddiv">
-    <p>Компания FlyMe осуществляет авиаперевозки с 1 декабря 2014 года. 
-      <br><br> Первый в России лоукостер стал самым успешным проектом в истории российской авиации.
-      В 2018 году FlyMe стала мировым лидером по росту пассажиропотока. 
-      <br><br> В этом же году производитель самолётов Boeing отметил, что FlyMe устанавливает новые стандарты мировой авиационной индустрии.
-      Российский лоукостер стал чемпионом мира по показателю среднесуточного налёта на самолётах Boeing 737-800 NG. 
-      <br><br>Чем больше налёт, тем меньше себестоимость лётного часа и, соответственно, больше билетов по низким ценам.</p>
-  </div>
-  </div>
-<div class="info" id="contact">
   <h2>Контакты</h2>
-  <h4>Офисы</h4>
-  <div class="rooms">
-    <p>г. Москва, пр. 60-летия Октября, д.15, 8 этаж, +7(944)44-44-044</p>
-  <p>г. Санкт-Петербург, Лиговский проспект, д. 14, +7(953)67-84-012</p>
-  <p>г. Уфа, ул. Максима Рыльского, д.9, к.2, +7(917)58-24-035</p>
+  <div class="bordereddiv">
+    <p>Телефон: +7 (123) 456-7890</p>
+    <p>Email: info@flyme.com</p>
+    <p>Адрес: Москва, ул. Летательная, 1</p>
   </div>
-  <br>
-  <h4>Круглосуточная служба поддержки - +7(902)02-03-222</h4>
+  
+  <div class="rooms">
+  </div>
 </div>
- -->
+
 <div class="extrainfo">
   <hr>
   <p>© 2023, ООО «Авиакомпания «FlyMe»</p>
 </div>
-

@@ -1,12 +1,5 @@
-@import "~@ng-select/ng-select/themes/default.theme.css";
-body{
+
+body {
     background-color: black;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #fff;
 }
-img{
-    width: 100%;
-}
+

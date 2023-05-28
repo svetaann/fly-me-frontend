@@ -1,111 +1,91 @@
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet" />
+
 
 <div class="tickets" id="tickets">
-    <h1>Удобный сервис поиска билетов</h1>
-    <div class="ticket-block">
-      <div class="ticket from">
-        <select id="selectID" [(ngModel)]="from" >
-          <option value="" hidden disabled selected>Откуда</option>
-          <option *ngFor= "let fromCity of fromCities" value={{fromCity}} >{{fromCity}}</option>
-        </select>
-        <!-- <div>
-          <input  style="color:black;" id="from" type="text" (focus)="fromFocused = true" (blur)="fromFocused = false" [(ngModel)]="searchText" class="pt-2 h-16 pr-10 rounded-l-xl w-48 pl-5 align-middle border-white border-2 focus:outline-none focus:border-yellow-500" placeholder="Откуда">
-          <ul class="list-group list-group-flush bg-white shadow-md rounded-b-xl" *ngIf="fromFocused">
-            <li style="color: black;" onclick="fromItemClick()" class="text-left pl-3 font-sans font-bold pb-3 h-10 border-b border-gray-200 w-full" *ngFor="let c of fromCities | filter: searchText">
-              {{c}}
-            </li>
-          </ul>
-        </div> -->
-        <!-- <input type="text" placeholder="Откуда" > -->
-        <!-- <ng-select [items]="fromCities">
-
-        </ng-select> -->
-        <!-- <select id="selectID" [(ngModel)]="from" >
-          <option value="" hidden disabled selected>Откуда</option>
-          <option *ngFor= "let fromCity of fromCities" value={{fromCity}} >{{fromCity}}</option>
-        </select> -->
-      </div>
-      <div class="ticket to">
-        <!-- <input type="text" placeholder="Куда" [(ngModel)]="to"> -->
-        <select id="selectID" [(ngModel)]="to" >
-          <option value="" hidden disabled selected>Куда</option>
-          <option *ngFor= "let toCity of toCities" value={{toCity}} >{{toCity}}</option>
-        </select>
-      </div>
-      <div class="ticket start text">
-        <input class="text" type="text" placeholder="Дата" [(ngModel)]="date" type="date">
-      </div>
-      <!-- <div class="ticket end">
-        <input type="text" placeholder="Обратно" [(ngModel)]="end">
-      </div> -->
-      <div class="ticket find">
-        <span style="color: aliceblue;" (click)="findTickets(from,to,date)">
-            <i  class="fas fa-plus">Найти</i>
-        </span>
-      </div>
-</div>
-<div class="showTickets" >
+  <h1>Удобный сервис поиска билетов</h1>
   <div class="ticket-block">
-    <div class="ticket" *ngFor= "let ticket of foundTickets">
-      <h1 style="padding-bottom: 8px; padding-top: 8px;">{{ticket.from_iata}} - {{ticket.to_iata}}</h1>
-      <h2 style="color:aliceblue">{{ticket.startTime}} - {{ticket.endTime}}</h2>
-      <p>Цена: {{ticket.price}}</p>
-      <!-- <p>Место: {{ticket.seat}}</p> -->
-      <span style="color: aliceblue;" (click)="chosenTicket(ticket.id)">
-        
-        <!-- <a href="#openModal">Купить</a> -->
-        <i  class="fas fa-plus">Купить</i>
-    </span>
-    </div>   
+    <div class="ticket from">
+      <select id="selectID" [(ngModel)]="from">
+        <option value="" hidden disabled selected>Откуда</option>
+        <option *ngFor="let fromCity of fromCities" value={{fromCity}}>{{fromCity}}</option>
+      </select>
+    </div>
+    <div class="ticket to">
+      <select id="selectID" [(ngModel)]="to">
+        <option value="" hidden disabled selected>Куда</option>
+        <option *ngFor="let toCity of toCities" value={{toCity}}>{{toCity}}</option>
+      </select>
+    </div>
+    <div class="ticket start text">
+      <input class="text" type="text" placeholder="Дата" [(ngModel)]="date" type="date">
+    </div>
+    <div class="ticket find">
+      <span style="color: aliceblue;" (click)="findTickets(from,to,date)">
+        <i class="fas fa-plus">Найти</i>
+      </span>
+    </div>
   </div>
-</div>
-<div *ngIf="openModalWindow" id="openModal" class="modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class ="modal-header">
-        <h3 style="color: #0f0; text-align: center;" class="modal-title">Введите ваши данные</h3>
-        <a (click)="closeWindow()" href="#close" title="Close" class="close"  >×</a>
-      </div>
-      <div class="modal-body">    
-          <div style="color: black;" class="search">
-            <div class="text" >
-              Фамилия:
-            <input  type="text" [(ngModel)]="surname" placeholder="Фамилия"/>
-            Имя:
-            <input type="text" [(ngModel)]="name" placeholder="Имя"/>
-            Отчество:
-            <input type="text" [(ngModel)]="patronymic" placeholder="Отчество" />
-            Дата рождения:
-            <input type="date" [(ngModel)]="birthDate" placeholder="Дата рождения"/>
-            Номер и серия паспорта:
-            <input type="text" [(ngModel)]="passport" placeholder="Номер и серия паспорта" />
-            Почта:
-            <input type="email" [(ngModel)]="email" name="" id="" placeholder="Email" [type]="email">
-            </div>
-            <div class="checkbox" style="color: white;">
-            <p style="color: aliceblue; margin-top: 20px;">Еда:</p>
-            <input  id="food" type="checkbox" [(ngModel)]="food" name="" id="">
-            <p style="color: aliceblue; margin-top: 20px;">Багаж:</p>
-            <input type="checkbox" [(ngModel)]="luggage" name="" id="">
-            </div>
-            
-            <span (click)="buyTicket(surname, name, patronymic, birthDate, passport, email, chosenTicketId, food, luggage)"><i  class="fas fa-plus">Купить</i></span>
-          </div>
+  <div class="showTickets">
+    <div class="ticket-block">
+      <div class="ticket" *ngFor="let ticket of foundTickets">
+        <h1 style="padding-bottom: 8px; padding-top: 8px;">{{ticket.from_iata}} - {{ticket.to_iata}}</h1>
+        <h2 style="color:aliceblue">{{ticket.startTime}} - {{ticket.endTime}}</h2>
+        <p>Цена: {{ticket.price}}</p>
+        <span style="color: aliceblue;" (click)="chosenTicket(ticket.id)">
+          <i class="fas fa-plus">Купить</i>
+        </span>
       </div>
     </div>
   </div>
-</div>
-<div *ngIf="openSuccessWindow" id="openModal2" class="modal2">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 style="color: aliceblue;">Ваш билет успешно забронирован</h2>
-        <a (click)="closeWindow()"  title="Close" class="close" style="color: aliceblue;" >×</a>
+  <div *ngIf="openModalWindow" id="openModal" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 style="color: #0f0; text-align: center;" class="modal-title">Введите ваши данные</h3>
+          <a (click)="closeWindow()" href="#close" title="Close" class="close">×</a>
+        </div>
+        <div class="modal-body">
+          <div style="color: black;" class="search">
+            <div class="text">
+              Фамилия:
+              <input type="text" [(ngModel)]="surname" placeholder="Фамилия" />
+              Имя:
+              <input type="text" [(ngModel)]="name" placeholder="Имя" />
+              Отчество:
+              <input type="text" [(ngModel)]="patronymic" placeholder="Отчество" />
+              Дата рождения:
+              <input type="date" [(ngModel)]="birthDate" placeholder="Дата рождения" />
+              Номер и серия паспорта:
+              <input type="text" [(ngModel)]="passport" placeholder="Номер и серия паспорта" />
+              Почта:
+              <input type="email" [(ngModel)]="email" name="" id="" placeholder="Email" [type]="email">
+            </div>
+            <div class="checkbox" style="color: white;">
+              <p style="color: aliceblue; margin-top: 20px;">Еда:</p>
+              <input id="food" type="checkbox" [(ngModel)]="food" name="" id="">
+              <p style="color: aliceblue; margin-top: 20px;">Багаж:</p>
+              <input type="checkbox" [(ngModel)]="luggage" name="" id="">
+            </div>
+
+            <span
+              (click)="buyTicket(surname, name, patronymic, birthDate, passport, email, chosenTicketId, food, luggage)"><i
+                class="fas fa-plus">Купить</i></span>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">    
-        <p style="color: aliceblue; margin-bottom: 40px;">Подробную информацию о билете и оплате смотрите в файле</p>
-        <input value="Нажмите для скачивания" type="button" (click)="generatePdf(currentTicketId)">
+    </div>
+  </div>
+  <div *ngIf="openSuccessWindow" id="openModal2" class="modal2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 style="color: aliceblue;">Ваш билет успешно забронирован</h2>
+          <a (click)="closeWindow()" title="Close" class="close" style="color: aliceblue;">×</a>
+        </div>
+        <div class="modal-body">
+          <p style="color: aliceblue; margin-bottom: 40px;">Подробную информацию о билете и оплате смотрите в файле</p>
+          <input value="Нажмите для скачивания" type="button" (click)="generatePdf(currentTicketId)">
+        </div>
       </div>
     </div>
   </div>
