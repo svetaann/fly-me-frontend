@@ -1,12 +1,30 @@
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+
 <div class="tickets" id="tickets">
     <h1>Удобный сервис поиска билетов</h1>
     <div class="ticket-block">
       <div class="ticket from">
-        <!-- <input type="text" placeholder="Откуда" > -->
         <select id="selectID" [(ngModel)]="from" >
           <option value="" hidden disabled selected>Откуда</option>
           <option *ngFor= "let fromCity of fromCities" value={{fromCity}} >{{fromCity}}</option>
         </select>
+        <!-- <div>
+          <input  style="color:black;" id="from" type="text" (focus)="fromFocused = true" (blur)="fromFocused = false" [(ngModel)]="searchText" class="pt-2 h-16 pr-10 rounded-l-xl w-48 pl-5 align-middle border-white border-2 focus:outline-none focus:border-yellow-500" placeholder="Откуда">
+          <ul class="list-group list-group-flush bg-white shadow-md rounded-b-xl" *ngIf="fromFocused">
+            <li style="color: black;" onclick="fromItemClick()" class="text-left pl-3 font-sans font-bold pb-3 h-10 border-b border-gray-200 w-full" *ngFor="let c of fromCities | filter: searchText">
+              {{c}}
+            </li>
+          </ul>
+        </div> -->
+        <!-- <input type="text" placeholder="Откуда" > -->
+        <!-- <ng-select [items]="fromCities">
+
+        </ng-select> -->
+        <!-- <select id="selectID" [(ngModel)]="from" >
+          <option value="" hidden disabled selected>Откуда</option>
+          <option *ngFor= "let fromCity of fromCities" value={{fromCity}} >{{fromCity}}</option>
+        </select> -->
       </div>
       <div class="ticket to">
         <!-- <input type="text" placeholder="Куда" [(ngModel)]="to"> -->
@@ -30,9 +48,10 @@
 <div class="showTickets" >
   <div class="ticket-block">
     <div class="ticket" *ngFor= "let ticket of foundTickets">
-      <h2>{{ticket.from_iata}} - {{ticket.to_iata}}</h2>
+      <h1 style="padding-bottom: 8px; padding-top: 8px;">{{ticket.from_iata}} - {{ticket.to_iata}}</h1>
+      <h2 style="color:aliceblue">{{ticket.startTime}} - {{ticket.endTime}}</h2>
       <p>Цена: {{ticket.price}}</p>
-      <p>Место: {{ticket.seat}}</p>
+      <!-- <p>Место: {{ticket.seat}}</p> -->
       <span style="color: aliceblue;" (click)="chosenTicket(ticket.id)">
         
         <!-- <a href="#openModal">Купить</a> -->
@@ -57,11 +76,11 @@
             Отчество:
             <input type="text" [(ngModel)]="patronymic" placeholder="Отчество" />
             Дата рождения:
-            <input type="text" [(ngModel)]="birthDate" placeholder="Дата рождения"/>
+            <input type="date" [(ngModel)]="birthDate" placeholder="Дата рождения"/>
             Номер и серия паспорта:
             <input type="text" [(ngModel)]="passport" placeholder="Номер и серия паспорта" />
             Почта:
-            <input type="text" [(ngModel)]="email" name="" id="" placeholder="Email" [type]="email">
+            <input type="email" [(ngModel)]="email" name="" id="" placeholder="Email" [type]="email">
             Еда:
             <input type="checkbox" [(ngModel)]="food" name="" id="">
             Багаж:
@@ -72,18 +91,19 @@
     </div>
   </div>
 </div>
-<div *ngIf="openSuccessWindow" id="openModal2" class="modal">
+<div *ngIf="true" id="openModal2" class="modal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title">Заголовок</h3>
+        <h2 style="color: black;">Ваш билет успешно забронирован</h2>
         <a (click)="closeWindow()"  title="Close" class="close"  >×</a>
       </div>
       <div class="modal-body">    
+        <p>Подробную информацию о билете и оплате смотрите в файле</p>
           <div class="boughtTicketInfo" *ngFor= "let ticket of boughtTickets">
-            <p>{{ticket.from_airport}} - {{ticket.to_airport}}</p>
+            <p style="color: black;">{{ticket.from_airport}} - {{ticket.to_airport}}</p>
             <p>{{ticket.from_iata}} - {{ticket.to_iata}}</p>
-            <input type="text">
+            <input style="color: black;" type="text">
           </div>
       </div>
     </div>

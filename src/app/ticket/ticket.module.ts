@@ -10,7 +10,7 @@ import { FilterPipe } from "./filter.pipe";
   
 @NgModule({
   declarations: [TicketComponent, FilterPipe],
-  imports: [BrowserModule, FormsModule, NgSelectModule, HttpClientModule],
+  imports: [BrowserModule, FormsModule, NgSelectModule, HttpClientModule,FormsModule,NgSelectModule],
   exports: [TicketComponent],
   providers: [],
   bootstrap: [TicketComponent],

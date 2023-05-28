@@ -59,6 +59,7 @@ export class TicketComponent {
   //
   fromFocused: boolean = false
   searchText=""
+  allowClear=false
   constructor(private ticketService: TicketService){
     
     this.tickets = [];
@@ -131,6 +132,7 @@ export class TicketComponent {
       console.log(user, passenger, ticketId)
     this.ticketService.buyTicket(ticketId, food, luggage, passenger).subscribe((data) => {console.log(data)
     this.boughtTickets = data as FullTicket[];})
+    console.log(this.boughtTickets)
 
   }
 
