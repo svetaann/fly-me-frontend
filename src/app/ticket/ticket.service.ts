@@ -28,13 +28,16 @@ export class TicketService {
     return this.http.get(`${this.host}/ticket/find`,{ params: params }).pipe(map((res) => res))
   }
 
-  buyTicket(ticketId: number, food: boolean, luggage: boolean, passenger: Passenger){
-    console.log(ticketId,food,luggage, passenger.fullname, passenger.birth_date)
+  buyTicket(ticketId: number, food: boolean, luggage: boolean,fullname: string, birthDate: string, passport:string, email:string){
+    console.log(ticketId,food,luggage, birthDate, passport, email)
     return this.http.post(`${this.host}/ticket/buy/${ticketId}`,{
-      fullname: passenger.fullname, 
-      birth_date: passenger.birth_date, 
-      passport:passenger.passport,
-      email: passenger.email});
+      fullname: fullname, 
+      birth_date: birthDate, 
+      passport: passport,
+      email: email,
+      food: food,
+      luggage: luggage
+    });
   }
 
   // generatePdf(ticketId: number){

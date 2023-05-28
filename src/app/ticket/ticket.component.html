@@ -33,8 +33,8 @@
           <option *ngFor= "let toCity of toCities" value={{toCity}} >{{toCity}}</option>
         </select>
       </div>
-      <div class="ticket start">
-        <input type="text" placeholder="Дата" [(ngModel)]="date" type="date">
+      <div class="ticket start text">
+        <input class="text" type="text" placeholder="Дата" [(ngModel)]="date" type="date">
       </div>
       <!-- <div class="ticket end">
         <input type="text" placeholder="Обратно" [(ngModel)]="end">
@@ -63,14 +63,15 @@
 <div *ngIf="openModalWindow" id="openModal" class="modal">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Заголовок</h3>
+      <div class ="modal-header">
+        <h3 style="color: #0f0; text-align: center;" class="modal-title">Введите ваши данные</h3>
         <a (click)="closeWindow()" href="#close" title="Close" class="close"  >×</a>
       </div>
       <div class="modal-body">    
-          <div class="search">
-            Фамилия:
-            <input type="text" [(ngModel)]="surname" placeholder="Фамилия"/>
+          <div style="color: black;" class="search">
+            <div class="text" >
+              Фамилия:
+            <input  type="text" [(ngModel)]="surname" placeholder="Фамилия"/>
             Имя:
             <input type="text" [(ngModel)]="name" placeholder="Имя"/>
             Отчество:
@@ -81,10 +82,14 @@
             <input type="text" [(ngModel)]="passport" placeholder="Номер и серия паспорта" />
             Почта:
             <input type="email" [(ngModel)]="email" name="" id="" placeholder="Email" [type]="email">
-            Еда:
-            <input type="checkbox" [(ngModel)]="food" name="" id="">
-            Багаж:
+            </div>
+            <div class="checkbox" style="color: white;">
+            <p style="color: aliceblue; margin-top: 20px;">Еда:</p>
+            <input  id="food" type="checkbox" [(ngModel)]="food" name="" id="">
+            <p style="color: aliceblue; margin-top: 20px;">Багаж:</p>
             <input type="checkbox" [(ngModel)]="luggage" name="" id="">
+            </div>
+            
             <span (click)="buyTicket(surname, name, patronymic, birthDate, passport, email, chosenTicketId, food, luggage)"><i  class="fas fa-plus">Купить</i></span>
           </div>
       </div>
@@ -95,17 +100,12 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 style="color: black;">Ваш билет успешно забронирован</h2>
-        <a (click)="closeWindow()"  title="Close" class="close"  >×</a>
+        <h2 style="color: aliceblue;">Ваш билет успешно забронирован</h2>
+        <a (click)="closeWindow()"  title="Close" class="close" style="color: aliceblue;" >×</a>
       </div>
       <div class="modal-body">    
-        <p>Подробную информацию о билете и оплате смотрите в файле</p>
+        <p style="color: aliceblue; margin-bottom: 40px;">Подробную информацию о билете и оплате смотрите в файле</p>
         <input value="Нажмите для скачивания" type="button" (click)="generatePdf(currentTicketId)">
-          <!-- <div class="boughtTicketInfo" *ngFor= "let ticket of boughtTickets">
-            <p style="color: black;">{{ticket.from_airport}} - {{ticket.to_airport}}</p>
-            <p>{{ticket.from_iata}} - {{ticket.to_iata}}</p>
-            <input style="color: black;" type="text">
-          </div> -->
       </div>
     </div>
   </div>

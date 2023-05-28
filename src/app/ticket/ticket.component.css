@@ -1,37 +1,50 @@
+:root {
+  --scrollbarWidth: 0;
+}
+::-webkit-scrollbar {
+  width: var(--scrollbarWidth);
+}
+::-webkit-scrollbar-track {
+  background: var(--scrollbarBg);
+  border-radius: var(--scrollbarBorderRadius);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbarThumb);
+  border-radius: var(--scrollbarBorderRadius);
+}
 .tickets {
-    background-color: #000;
-    text-align: center;
-    }
-    
-    .tickets h1 {
-    color: #0f0;
-    font-size: 36px;
-    padding-bottom: 90px;
-    padding-top: 80px;
-    }
-    
-    .tickets .ticket-block {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    }
-    
-    .tickets .ticket {
-    background-color: #000;
-    border-radius: 10px;
-    }
-    
-    .tickets .ticket h2 {
-    color: #0f0;
-    font-size: 24px;
-    margin-bottom: 10px;
-    }
-    
-    .tickets .ticket p {
-    font-size: 18px;
-    margin-bottom: 10px;
-    }
-.tickets input, .tickets select{
+  background-color: #000;
+  text-align: center;
+}  
+.tickets h1 {
+  color: #0f0;
+  font-size: 36px;
+  padding-bottom: 90px;
+  padding-top: 80px;
+}
+.tickets .ticket-block {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  }
+  
+  .tickets .ticket {
+  background-color: #000;
+  border-radius: 10px;
+  }
+  
+  .tickets .ticket h2 {
+  color: #0f0;
+  font-size: 24px;
+  margin-bottom: 10px;
+  }
+  
+  .tickets .ticket p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  }
+
+.tickets .text input, .tickets select{
   border: none;
   display: block;
   height: 65px;
@@ -86,7 +99,6 @@
 .tickets i{
   padding-top: 20px;
   color: #0f0;
-  font-family: Arial, sans-serif;
 }
 .showTickets {
   background-color: #000;
@@ -129,7 +141,7 @@
   margin-bottom: 38px;
   text-align:center;
 }
-    /* Стили всплывающего окна по-умолчанию */
+
 .modal, .modal2 {
   position: fixed;
   top: 0;
@@ -185,6 +197,9 @@
 }
 @media (min-width: 768px) {
 .modal-content {
+  border: #0f0 solid 2px;
+  border-radius: 21px;
+  background-color: #000;
     -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
     box-shadow: 0 5px 15px rgba(0,0,0,.5);
 }
@@ -202,7 +217,7 @@
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 5px;
+  padding: 20px;
   border-bottom: 1px solid #eceeef;
 }
 .modal-title {
@@ -214,11 +229,10 @@
 }
 .close {
   float: right;
-  font-family: sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1;
-  color: #000;
+  color: #0f0;
   text-shadow: 0 1px 0 #fff;
   opacity: .5;
   text-decoration: none;
@@ -236,13 +250,15 @@ position: relative;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 15px;
-  overflow: auto;
+  overflow-x:auto;
 }
-.modal input{
+
+.modal .text input{
   margin: 0;
   padding: 0;
   width: 100%;
 }
+
 .modal2 input{
   margin-left: 150px;
   width: 180px;
@@ -251,6 +267,11 @@ position: relative;
   border-radius: 21px;
   background-color: #000;
   color: #eceeef;
+}
+.modal2 input{
+  margin-left: 0;
+  height: 50px;
+  width: 300px;
 }
 .modal span, .modal2 span{
   margin-left: 147px;
@@ -262,4 +283,13 @@ position: relative;
   width: 100%;
   height: auto;
   visibility: visible;
+}
+.checkbox input{
+  display: block;
+  margin-left: 145px;
+  margin-top: 5px;
+  height: 30px;
+  width: 165px;
+  text-align: center;
+  font-size: 15px;
 }

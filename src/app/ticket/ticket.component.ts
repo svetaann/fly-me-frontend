@@ -130,10 +130,7 @@ export class TicketComponent {
     this.openModalWindow = false;
     this.openSuccessWindow = true;
     const user = surname + ' ' + name + ' ' + pathronymic
-    let passenger: Passenger = {fullname: user,
-      birth_date: birthDate, passport: passport, email: email}
-      console.log(user, passenger, ticketId)
-    this.ticketService.buyTicket(ticketId, food, luggage, passenger).subscribe((data) => {console.log(data)
+    this.ticketService.buyTicket(ticketId, food, luggage, user, birthDate, passport, email).subscribe((data) => {console.log(data)
     this.boughtTickets = data as FullTicket[];})
     this.currentTicketId = ticketId
     console.log("buyTicket", this.currentTicketId)
