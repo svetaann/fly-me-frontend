@@ -60,6 +60,8 @@ export class TicketComponent {
   fromFocused: boolean = false
   searchText=""
   allowClear=false
+  //
+  currentTicketId: number;
   constructor(private ticketService: TicketService){
     
     this.tickets = [];
@@ -79,6 +81,7 @@ export class TicketComponent {
     this.luggage=false
     this.fromCities = [];
     this.toCities = [];
+    this.currentTicketId = 0
   }
 
   ngOnInit(){
@@ -132,8 +135,14 @@ export class TicketComponent {
       console.log(user, passenger, ticketId)
     this.ticketService.buyTicket(ticketId, food, luggage, passenger).subscribe((data) => {console.log(data)
     this.boughtTickets = data as FullTicket[];})
-    console.log(this.boughtTickets)
+    this.currentTicketId = ticketId
+    console.log("buyTicket", this.currentTicketId)
 
+  }
+
+  generatePdf(ticketId: number){
+    console.log("generatePdf", ticketId)
+    document.location.href = `http://localhost:3001/ticket/pdf/${ticketId}`;
   }
 
 }

@@ -130,7 +130,7 @@
   text-align:center;
 }
     /* Стили всплывающего окна по-умолчанию */
-.modal {
+.modal, .modal2 {
   position: fixed;
   top: 0;
   right: 0;
@@ -144,7 +144,7 @@
   margin: 0;
   padding: 0;
 }
-.modal:target {
+.modal:target, .modal2:target {
   opacity: 1; 
   pointer-events: all;
   overflow-y: auto; 
@@ -159,6 +159,7 @@
     max-width: 500px;
     margin: 30px auto; 
 }
+
 }
 .modal-content {
   height: 650px;
@@ -178,6 +179,9 @@
   border: 1px solid rgba(0,0,0,.2);
   border-radius: .3rem;
   outline: 0;
+}
+.modal2 .modal-content{
+  height: 270px;
 }
 @media (min-width: 768px) {
 .modal-content {
@@ -239,11 +243,20 @@ position: relative;
   padding: 0;
   width: 100%;
 }
-.modal span{
+.modal2 input{
+  margin-left: 150px;
+  width: 180px;
+  margin-bottom: 10px;
+  border: #0f0 solid 2px;
+  border-radius: 21px;
+  background-color: #000;
+  color: #eceeef;
+}
+.modal span, .modal2 span{
   margin-left: 147px;
   border-radius: 21px;
 }
-.modal p{
+.modal p, .modal2 p{
   color: #000;
   font-size: medium;
   width: 100%;

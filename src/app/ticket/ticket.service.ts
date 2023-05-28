@@ -36,4 +36,8 @@ export class TicketService {
       passport:passenger.passport,
       email: passenger.email});
   }
+
+  // generatePdf(ticketId: number){
+  //   return this.http.get(`${this.host}/ticket/pdf/${ticketId}`)
+  // }
 }

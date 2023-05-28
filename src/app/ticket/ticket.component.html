@@ -91,7 +91,7 @@
     </div>
   </div>
 </div>
-<div *ngIf="true" id="openModal2" class="modal">
+<div *ngIf="openSuccessWindow" id="openModal2" class="modal2">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -100,11 +100,12 @@
       </div>
       <div class="modal-body">    
         <p>Подробную информацию о билете и оплате смотрите в файле</p>
-          <div class="boughtTicketInfo" *ngFor= "let ticket of boughtTickets">
+        <input value="Нажмите для скачивания" type="button" (click)="generatePdf(currentTicketId)">
+          <!-- <div class="boughtTicketInfo" *ngFor= "let ticket of boughtTickets">
             <p style="color: black;">{{ticket.from_airport}} - {{ticket.to_airport}}</p>
             <p>{{ticket.from_iata}} - {{ticket.to_iata}}</p>
             <input style="color: black;" type="text">
-          </div>
+          </div> -->
       </div>
     </div>
   </div>
