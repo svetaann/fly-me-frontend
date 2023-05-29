@@ -30,7 +30,7 @@
       <div class="ticket" *ngFor="let ticket of foundTickets">
         <h1 style="padding-bottom: 8px; padding-top: 8px;">{{ticket.from_iata}} - {{ticket.to_iata}}</h1>
         <h2 style="color:aliceblue">{{ticket.startTime}} - {{ticket.endTime}}</h2>
-        <p>Цена: {{ticket.price}}</p>
+        <p style="color: aliceblue;">Цена: {{ticket.price}}</p>
         <span style="color: aliceblue;" (click)="chosenTicket(ticket.id)">
           <i class="fas fa-plus">Купить</i>
         </span>

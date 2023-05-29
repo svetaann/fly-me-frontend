@@ -116,20 +116,16 @@ export class TicketComponent {
       this.foundTickets = data as FullTicket[];
     })
   }
-
   chosenTicket(ticket_id: number) {
     console.log(ticket_id)
-
     this.chosenTicketId = ticket_id;
     this.openModalWindow = true;
 
   }
-
   closeWindow() {
     this.openModalWindow = false;
     this.openSuccessWindow = false;
   }
-
   buyTicket(surname: string, name: string, pathronymic: string, birthDate: string, passport: string, email: string, ticketId: number, food: boolean, luggage: boolean) {
     this.openModalWindow = false;
     this.openSuccessWindow = true;
@@ -140,9 +136,7 @@ export class TicketComponent {
     })
     this.currentTicketId = ticketId
     console.log("buyTicket", this.currentTicketId)
-
   }
-
   generatePdf(ticketId: number) {
     this.ticketService.generatePdf(ticketId)
     console.log("generatePdf", ticketId)
